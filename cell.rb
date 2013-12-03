@@ -12,9 +12,32 @@ class Cell
 		@status = false
 	end
 
-	def neighbors(x, y)
+	def neighbor_array
 		neighbor_corrdinates = [[(x + 1), (y + 1)],
 		[(x + 1), (y - 1)], [(x + 1), y], [(x - 1), (y + 1)],
 		[(x - 1), (y - 1)], [(x - 1), y], [x, (y + 1)], [x, (y - 1)]]
+	end
+
+	def alive_array
+		alive_array = neighbor_array.collect{ |c| c == true ? @status = true : nil }
+	end
+
+	def alive_count
+		alive_num = alive_array.count
+	end
+
+	def destiny
+		case
+			when alive_count < 2
+				@status = false
+			when alive_count == 2
+				@status = @status
+			when alive_count == 3
+				@status = true
+			when alive_count > 3
+				@status = false
+			else
+				"confused"
+		end
 	end
 end
