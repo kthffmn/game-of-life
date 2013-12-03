@@ -3,8 +3,16 @@
 #########################
 
 class Cell
+
 	def initialize
+
 	end
-	def neighbor_count
+	def neighbors
+		#neighbor_array
+		[]
+	end
+
+	def spawn_at
+
 	end
 end
