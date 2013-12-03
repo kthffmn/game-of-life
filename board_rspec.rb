@@ -2,9 +2,9 @@
 ### L I F E   R S P E C   B O A R D ###
 #######################################
 
-require './classB.rb'
+require './board.rb'
 
-describe Class, "#method" do
+describe Board, "#method" do
 
   it "should blah blah blah" do
     expect(Class.new.generate).to be_a(Integer)
