@@ -3,11 +3,17 @@
 #################################
 
 require "./cell.rb"
-requrie "./game.rb"
+require "./game.rb"
 
 describe Cell, "#initialize" do
 	it "should be able to initialize a cell class" do
-    	lambda {Cell.new}.should_not raise_error
+    	lambda {Cell.new(2, 2)}.should_not raise_error
+ 	end
+ end
+
+describe Game, "#initialize" do
+	it "should be able to initialize a board" do
+    	lambda {Game.new(3, 3)}.should_not raise_error
  	end
  end
 

@@ -5,7 +5,7 @@
 require './cell.rb'
 
 class Game
-	attr_reader :board
+	attr_reader :board, :width, :height
 
 	def initialize(width, height)
 		@width = width
