@@ -17,28 +17,31 @@ describe Game, "#initialize" do
  	end
  end
 
- describe Game, "#make_cells" do
- 	before do
- 		game = Game.new(3,3)
- 		game.make_cells
- 		game.board[2][2].status = true
+describe Game, "#make_cells" do
+	it "should make a cell at a particular location on the board" do
+		game = Game.new(3,3)
+		game.make_cells
+		expect(game.board[0][0]).to be_a(Cell)
  	end
+ end
+
+ describe Cell, "#destiny" do
+ 	
 	it "should die if it has less than two live neighbors" do
-		expect(game.board[2][2]).to eq(false)
+		game = Game.new(3,3)
+ 		game.make_cells
+ 		game.board[0][0].status = true
+		expect(game.board[0][0]).to eq(false)
 	end
+
+	it "should live if has 2-3 live neighbors" do
+		game = Game.new(3,3)
+ 		game.make_cells
+ 		game.board[0][0].status = true
+		expect(game.board[0][0]).to eq(false)
+	end
+
 end
-
-
-# describe Game, "#neighbors" do
-#  	before do
-#  		game = Game.new(3,3)
-#  		game.make_cells
-#  		game.board[2][2].status = true
-#  	end
-# 	it "should die if it has less than two live neighbors" do
-# 		expect(game.board[2][2]).to eq(false)
-# 	end
-# end
 
 =begin
 "should die if it has less than two live neighbors"

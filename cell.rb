@@ -19,7 +19,7 @@ class Cell
 	end
 
 	def alive_array
-		alive_array = neighbor_array.collect{ |c| c == true ? @status = true : nil }
+		alive_array = neighbor_array.select{|n|n.status==true}
 	end
 
 	def alive_count

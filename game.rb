@@ -21,6 +21,7 @@ class Game
 				@board[w][h] = Cell.new(w, h)
 				h += 1
 			end
+			h = 0
 			w += 1
 		end
 	end
