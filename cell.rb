@@ -1,6 +1,6 @@
-######################### => false => dead
-### L I F E   C E L L ###
-######################### => true => alive
+#########################______K_E_Y______
+######## C E L L ########   false => dead
+#########################   true => alive
 
 require './game.rb'
 
@@ -13,6 +13,15 @@ class Cell
 		@y = y
 		@game = game
 		@status = false
+	end
+
+	def rand_num(min, max)
+		rand(min..max)
+	end
+
+	def make_alive_cells(num_alive, imput)
+		alive.times do
+			game.board[rand_num(0, imput)][rand_num(0, imput)].status = true
 	end
 
 	def neighbor_array

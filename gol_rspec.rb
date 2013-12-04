@@ -1,9 +1,9 @@
-##############################
-###  R S P E C  	G O L  ###
-##############################
+###############################
+###  R S P E C   4   G O L  ###
+###############################
 
-require "./cell.rb"
-require "./game.rb"
+require './cell.rb'
+require './game.rb'
 
 describe Cell, "#initialize" do
 	it "should be able to initialize a cell class" do

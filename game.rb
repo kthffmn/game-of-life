@@ -1,5 +1,5 @@
 ##########################
-### L I F E    G A M E ###
+#######  G A M E #########
 ##########################
 
 require './cell.rb'
@@ -24,6 +24,11 @@ class Game
 			h = 0
 			w += 1
 		end
+	end
+
+	def num_alive(imput)
+		num_of_total_cells = imput ^ 2
+		rand_num(3, num_of_total_cells)
 	end
 
 end 
