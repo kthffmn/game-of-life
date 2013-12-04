@@ -6,7 +6,7 @@ require './game.rb'
 require './cell.rb'
 
 def get_imput
-	puts "Enter a number between 3 and 100 to choose length and width: "
+	puts "Enter a number between 3 and 20 to choose length and width: "
 	imput = gets.chomp
 	if imput.is_a? Integer 
 		if imput > 2 && imput < 101
@@ -29,7 +29,7 @@ end
 # get width and height of grid
 imput = get_imput
 # make a new game using user imput
-game = Game.new(imput, imput)
+game = Game.new(imput)
 # make cells in each location of grid
 game.make_cells
 # change some cells to alive*************************************************

@@ -7,22 +7,22 @@ require './cell.rb'
 class Game
 	attr_reader :board, :width, :height
 
-	def initialize(width, height)
-		@width = width
-		@height = height
+	def initialize(imput)
+		@width = imput
+		@height = imput
 		@board = Array.new(width) {Array.new(height)}
 	end
 
 	def make_cells
-		w = 0
-		h = 0
-		while w < width do
-			while h < height do
-				@board[w][h] = Cell.new(w, h, self)
-				h += 1
+		w_counter = 0
+		h_counter = 0
+		while w_counter < width do
+			while h_counter < height do
+				@board[w_counter][h_counter] = Cell.new(w_counter, h_counter, self)
+				h_counter += 1
 			end
-			h = 0
-			w += 1
+			h_counter = 0
+			w_counter += 1
 		end
 	end
 
@@ -32,12 +32,13 @@ class Game
 		end
 	end
 
-	def call_destiny(imput)
+	def select_destiny(imput)
 		w_counter = 0
 		h_counter = 0
 		while w_counter < imput do
 			while h_counter < imput do
-				@board[w_counter][h_counter].destiny
+				if @board[w_counter][h_counter].alive_count != 0 || @board[w_counter][h_counter].status = true
+		 			@board[w_counter][h_counter].destiny
 				h_counter += 1
 			end
 		h_counter = 0
@@ -45,4 +46,26 @@ class Game
 		end
 	end
 
+	#this definition calls destiny on all cells
+	# def call_destiny(imput)
+	# 	w_counter = 0
+	# 	h_counter = 0
+	# 	while w_counter < imput do
+	# 		while h_counter < imput do
+	# 			@board[w_counter][h_counter].destiny
+	# 			h_counter += 1
+	# 		end
+	# 	h_counter = 0
+	# 	w_counter +=1
+	# 	end
+	# end
 end 
+
+
+
+
+
+
+
+
+

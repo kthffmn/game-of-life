@@ -23,17 +23,17 @@ class Cell
 		else
 			game.board[row][column]
 		end
-	end	
+	end
 
 	def neighbor_array
 		neighbor_corrdinates = [ nil?(x + 1, y + 1),
 								 nil?(x + 1, y - 1), 
-								 nil?(x + 1, y), 
+								 nil?(x + 1, y    ), 
 								 nil?(x - 1, y + 1),
 								 nil?(x - 1, y - 1), 
-								 nil?(x - 1, y), 
+								 nil?(x - 1, y    ), 
 								 nil?(x    , y + 1), 
-								 nil?(x    , y - 1)       ]
+								 nil?(x    , y - 1)  ]
 		neighbor_corrdinates.compact
 	end
 
