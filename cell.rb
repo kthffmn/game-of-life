@@ -15,25 +15,26 @@ class Cell
 		@status = false
 	end
 
-	def rand_num(min, max)
-		rand(min..max)
-	end
-
-	def make_alive_cells(num_alive, imput, game)
-		alive.times do
-			game.board[rand_num(0, imput)][rand_num(0, imput)].status = true
+	def nil?(row, column)
+		if game.board[row] == nil
+			nil
+		elsif game.board[row][column] == nil
+			nil
+		else
+			game.board[row][column]
 		end
-	end
+	end	
 
 	def neighbor_array
-		neighbor_corrdinates = [ game.board[(x + 1)][(y + 1)],
-								 game.board[(x + 1)][(y - 1)], 
-								 game.board[(x + 1)][y], 
-								 game.board[(x - 1)][(y + 1)],
-								 game.board[(x - 1)][(y - 1)], 
-								 game.board[(x - 1)][y], 
-								 game.board[x][(y + 1)], 
-								 game.board[x][(y - 1)]        ]
+		neighbor_corrdinates = [ nil?(x + 1, y + 1),
+								 nil?(x + 1, y - 1), 
+								 nil?(x + 1, y), 
+								 nil?(x - 1, y + 1),
+								 nil?(x - 1, y - 1), 
+								 nil?(x - 1, y), 
+								 nil?(x    , y + 1), 
+								 nil?(x    , y - 1)       ]
+		neighbor_corrdinates.compact
 	end
 
 	def alive_neighbors
@@ -52,17 +53,5 @@ class Cell
 		end
 	end
 
-	def call_destiny(imput, game)
-		w = 0
-		h = 0
-		while w < imput do
-			while h < imput do
-				game.board[w, h].destiny
-				h += 1
-			end
-		h = 0
-		w +=1
-		end
-	end
 
 end

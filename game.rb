@@ -26,9 +26,23 @@ class Game
 		end
 	end
 
-	def num_alive(imput)
-		num_of_total_cells = imput ^ 2
-		rand_num(3, num_of_total_cells)
+	def make_alive_cells(num_alive, imput)
+		num_alive.times do
+			@board[rand(0...imput)][rand(0...imput)].status = true
+		end
+	end
+
+	def call_destiny(imput)
+		w_counter = 0
+		h_counter = 0
+		while w_counter < imput do
+			while h_counter < imput do
+				@board[w_counter][h_counter].destiny
+				h_counter += 1
+			end
+		h_counter = 0
+		w_counter +=1
+		end
 	end
 
 end 

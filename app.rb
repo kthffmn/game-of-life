@@ -6,14 +6,23 @@ require './game.rb'
 require './cell.rb'
 
 def get_imput
-	puts "Enter a number between 3 and 100: "
+	puts "Enter a number between 3 and 100 to choose length and width: "
 	imput = gets.chomp
-	if imput.is_a? Integer && imput > 2 && imput < 101
-		imput
+	if imput.is_a? Integer 
+		if imput > 2 && imput < 101
+			imput
+		else
+			imput = 10
+		end
 	else
 		imput = 10
 	end
 	imput
+end
+
+def num_alive(imput)
+	num_of_total_cells = imput ^ 2
+	rand(3...num_of_total_cells)
 end
 
 
@@ -24,7 +33,7 @@ game = Game.new(imput, imput)
 # make cells in each location of grid
 game.make_cells
 # change some cells to alive*************************************************
-num_alive = num_alive(imput)
-game.make_alive_cells(num_alive, imput, self)
+num = num_alive(imput)
+game.make_alive_cells(num, imput)
 # run destiny on each cell
-game.call_destiny(imput, self)
+game.call_destiny(imput)
