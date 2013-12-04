@@ -22,6 +22,7 @@ class Cell
 	def make_alive_cells(num_alive, imput, game)
 		alive.times do
 			game.board[rand_num(0, imput)][rand_num(0, imput)].status = true
+		end
 	end
 
 	def neighbor_array
