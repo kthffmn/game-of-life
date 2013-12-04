@@ -15,7 +15,7 @@ class Cell
 		@status = false
 	end
 
-	def nil?(row, column)
+	def nil?(row, column) #Sara's idea:
 		if game.board[row] == nil
 			nil
 		elsif game.board[row][column] == nil

@@ -36,4 +36,4 @@ game.make_cells
 num = num_alive(imput)
 game.make_alive_cells(num, imput)
 # run destiny on each cell
-game.call_destiny(imput)
+game.select_destiny(imput)

@@ -39,26 +39,13 @@ class Game
 			while h_counter < imput do
 				if @board[w_counter][h_counter].alive_count != 0 || @board[w_counter][h_counter].status = true
 		 			@board[w_counter][h_counter].destiny
-				h_counter += 1
+					h_counter += 1
+				end
 			end
 		h_counter = 0
 		w_counter +=1
 		end
 	end
-
-	#this definition calls destiny on all cells
-	# def call_destiny(imput)
-	# 	w_counter = 0
-	# 	h_counter = 0
-	# 	while w_counter < imput do
-	# 		while h_counter < imput do
-	# 			@board[w_counter][h_counter].destiny
-	# 			h_counter += 1
-	# 		end
-	# 	h_counter = 0
-	# 	w_counter +=1
-	# 	end
-	# end
 end 
 
 
