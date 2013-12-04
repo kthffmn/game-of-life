@@ -19,7 +19,7 @@ class Cell
 		rand(min..max)
 	end
 
-	def make_alive_cells(num_alive, imput)
+	def make_alive_cells(num_alive, imput, game)
 		alive.times do
 			game.board[rand_num(0, imput)][rand_num(0, imput)].status = true
 	end
@@ -50,4 +50,18 @@ class Cell
 			@status = true
 		end
 	end
+
+	def call_destiny(imput, game)
+		w = 0
+		h = 0
+		while w < imput do
+			while h < imput do
+				game.board[w, h].destiny
+				h += 1
+			end
+		h = 0
+		w +=1
+		end
+	end
+
 end

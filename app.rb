@@ -16,6 +16,7 @@ def get_imput
 	imput
 end
 
+
 # get width and height of grid
 imput = get_imput
 # make a new game using user imput
@@ -24,18 +25,6 @@ game = Game.new(imput, imput)
 game.make_cells
 # change some cells to alive*************************************************
 num_alive = num_alive(imput)
-game.make_alive_cells(num_alive, imput)
+game.make_alive_cells(num_alive, imput, self)
 # run destiny on each cell
-game.board.each{|cell| cell.destiny}
-
-
-w = 0
-h = 0
-while w < width do
-	while h < height do
-		board[w, h]
-		h += 1
-	end
-h = 0
-w +=1
-end
+game.call_destiny(imput, self)
