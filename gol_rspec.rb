@@ -61,6 +61,6 @@ describe Cell, "#destiny" do
  	 	game.board[1][0].status = true
  		game.board[0][1].status = true
 		game.board[1][1].destiny
-		expect(game.board[1][1].status).to eq.to eq(true)
+		expect(game.board[1][1].status).to eq(true)
 	end
 end
