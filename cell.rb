@@ -5,14 +5,14 @@
 require './game.rb'
 
 class Cell
-	attr_reader :x, :y #:game
+	attr_reader :x, :y, :game
 	attr_accessor :status
 
-	def initialize(x, y)
+	def initialize(x, y, game)
 		@x = x
 		@y = y
+		@game = game
 		@status = false
-		#@game = game
 	end
 
 	def neighbor_array

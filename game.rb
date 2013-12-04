@@ -18,7 +18,7 @@ class Game
 		h = 0
 		while w < width do
 			while h < height do
-				@board[w][h] = Cell.new(w, h)
+				@board[w][h] = Cell.new(w, h, self)
 				h += 1
 			end
 			h = 0
