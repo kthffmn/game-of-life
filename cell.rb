@@ -52,6 +52,5 @@ class Cell
 			@status = true
 		end
 	end
-
-
+	
 end

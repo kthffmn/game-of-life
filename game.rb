@@ -7,13 +7,13 @@ require './cell.rb'
 class Game
 	attr_reader :board, :width, :height
 
-	def initialize(imput)
-		@width = imput
-		@height = imput
+	def initialize(input)
+		@width = input
+		@height = input
 		@board = Array.new(width) {Array.new(height)}
 	end
 
-	def make_cells
+	def make_cells #Sterling's idea
 		w_counter = 0
 		h_counter = 0
 		while w_counter < width do
@@ -24,23 +24,24 @@ class Game
 			h_counter = 0
 			w_counter += 1
 		end
+		#puts w_counter
 	end
 
-	def make_alive_cells(num_alive, imput)
+	def make_alive_cells(num_alive)
 		num_alive.times do
-			@board[rand(0...imput)][rand(0...imput)].status = true
+			@board[rand(0...width)][rand(0...width)].status = true
 		end
 	end
 
-	def select_destiny(imput)
+	def select_destiny
 		w_counter = 0
 		h_counter = 0
-		while w_counter < imput do
-			while h_counter < imput do
-				if @board[w_counter][h_counter].alive_count != 0 || @board[w_counter][h_counter].status = true
-		 			@board[w_counter][h_counter].destiny
-					h_counter += 1
-				end
+		while w_counter < width do
+			while h_counter < width do
+				#if @board[w_counter][h_counter].alive_count != 0 || @board[w_counter][h_counter].status = true
+		 		@board[w_counter][h_counter].destiny
+				h_counter += 1
+				#end
 			end
 		h_counter = 0
 		w_counter +=1
@@ -50,23 +51,35 @@ class Game
 	def prints_status
 		w_counter = 0
 		h_counter = 0
-		while w_counter < imput do
-			while h_counter < imput do
-				puts @board[w_counter][h_counter].status
-				end
+		while w_counter < width do
+			while h_counter < width do
+				print 0 if @board[w_counter][h_counter].status == true
+				print " " if @board[w_counter][h_counter].status == false
+				h_counter += 1
+			end
+		h_counter = 0
+		w_counter +=1
+		print "\n"
+		end
+		array
+	end
+
+	def makes_array_to_count
+		array =[]
+		w_counter = 0
+		h_counter = 0
+		while w_counter < width do
+			while h_counter < width do
+				array << @board[w_counter][h_counter].status
+				h_counter += 1
 			end
 		h_counter = 0
 		w_counter +=1
 		end
+		array
 	end
 
-end 
-
-
-
-
-
-
-
-
-
+	def array_count
+		makes_array_to_count.length
+	end
+end
