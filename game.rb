@@ -46,6 +46,20 @@ class Game
 		w_counter +=1
 		end
 	end
+
+	def prints_status
+		w_counter = 0
+		h_counter = 0
+		while w_counter < imput do
+			while h_counter < imput do
+				puts @board[w_counter][h_counter].status
+				end
+			end
+		h_counter = 0
+		w_counter +=1
+		end
+	end
+
 end 
 
 

@@ -35,5 +35,9 @@ game.make_cells
 # change some cells to alive*************************************************
 num = num_alive(imput)
 game.make_alive_cells(num, imput)
-# run destiny on each cell
+# run destiny on each cell that's surrounded by at least one cell
 game.select_destiny(imput)
+# prints statuses
+game.prints_status(imput)
+
+
