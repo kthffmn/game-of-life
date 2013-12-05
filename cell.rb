@@ -1,6 +1,6 @@
-#########################______K_E_Y______
-######## C E L L ########   false => dead
-#########################   true => alive
+#########################
+######## C E L L ########
+#########################
 
 require './game.rb'
 
@@ -25,7 +25,7 @@ class Cell
 	end
 
 	def neighbor_array
-		neighbor_corrdinates = [ nil?(x + 1, y + 1),
+		neighbor_coordinates = [ nil?(x + 1, y + 1),
 								 nil?(x + 1, y - 1), 
 								 nil?(x + 1, y    ), 
 								 nil?(x - 1, y + 1),
@@ -33,11 +33,20 @@ class Cell
 								 nil?(x - 1, y    ), 
 								 nil?(x    , y + 1), 
 								 nil?(x    , y - 1)  ]
-		neighbor_corrdinates.compact
+		neighbor_coordinates.compact
+	end
+
+	def alive?
+		if @status == true
+			true
+		else
+			false
+		end
 	end
 
 	def alive_neighbors
-		g = neighbor_array.select{|neighbor|neighbor.status==true}
+		g = neighbor_array.select{|neighbor|neighbor.alive?==true}
+		# commented out code represents my attempts to debug:
 		# print [x,y]
 		# print "\n"
 		# print g.map { |e| [e.x, e.y, e.status] }
@@ -58,5 +67,5 @@ class Cell
 			@destiny = @status
 		end
 	end
-	
+
 end

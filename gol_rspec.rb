@@ -5,6 +5,17 @@
 require './cell.rb'
 require './game.rb'
 
+RSpec.configure do |config|
+  # Use color in STDOUT
+  config.color_enabled = true
+
+  # Use color not only in STDOUT but also in pagers and files
+  config.tty = true
+
+  # Use the specified formatter
+  config.formatter = :progress # :progress, :html, :textmate
+end
+
 describe Cell, "#initialize" do
 	it "should be able to initialize a cell class" do
 		game = Game.new(3, 3)

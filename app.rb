@@ -35,7 +35,7 @@ if input2 == "y"
 		game.swap
 		puts "\e[H\e[2J"
 		game.prints_status
-		sleep 0.1
+		sleep 0.1git
 	end
 else
 	puts "Okay cool I'll just go over here then *shuffles away awkwardly*"
