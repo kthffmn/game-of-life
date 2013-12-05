@@ -36,7 +36,7 @@ class Cell
 		neighbor_coordinates.compact
 	end
 
-	def alive?
+	def alive
 		if @status == true
 			true
 		else
@@ -45,13 +45,18 @@ class Cell
 	end
 
 	def alive_neighbors
-		g = neighbor_array.select{|neighbor|neighbor.alive?==true}
+		container = []
+		neighbor_array.each do |neighbor|
+			if neighbor.alive == true
+				container << neighbor
+			end
+		end
+		container
 		# commented out code represents my attempts to debug:
 		# print [x,y]
 		# print "\n"
 		# print g.map { |e| [e.x, e.y, e.status] }
 		# print "\n"
-		# g
 	end
 
 	def alive_count

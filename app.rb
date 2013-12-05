@@ -6,13 +6,13 @@ require './game.rb'
 require './cell.rb'
 
 def get_imput
-	print "Enter a number between 3 and 10 to choose length and width: "
+	print "Enter a number between 3 and 30 to choose length and width: "
 	input = gets.chomp
 end
 
 def num_alive(input)
 	num_of_total_cells = input ** 2
- 	rand(6...num_of_total_cells)
+ 	rand(7...num_of_total_cells)
 end
 
 ##################################################### Get size of board
@@ -25,17 +25,21 @@ game.make_cells
 num = num_alive(input)
 game.make_alive_cells(num)
 ##################################################### Prints board
-puts "1. Board made, alive cells randomly selected (first generation):"
+puts "First generation:"
 game.prints_status
-puts "Continue (y/n)"
+##################################################### Prompts user to continue
+print "Continue? (y/n): "
 input2 = gets.chomp
+##################################################### Prints infinte loop of generations
 if input2 == "y"
+	puts "Enter [control][c] at any point to quit"
+	sleep 2
 	while true
 		game.select_destiny
 		game.swap
 		puts "\e[H\e[2J"
 		game.prints_status
-		sleep 0.1git
+		sleep 0.1
 	end
 else
 	puts "Okay cool I'll just go over here then *shuffles away awkwardly*"
