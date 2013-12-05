@@ -3,7 +3,7 @@
 ##########################
 
 require './cell.rb'
-require 'colorize'
+require 'rainbow'
 
 class Game
 	attr_reader :board, :width, :height
@@ -63,17 +63,39 @@ class Game
 		end
 	end
 
-
 	def prints_status
 		w_counter = 0
 		h_counter = 0
+		red_color = 255
+		blue_color = 0
 		while w_counter < width do
 			while h_counter < height do
-				print " O ".red if @board[w_counter][h_counter].age == 1
-				print " O ".yellow if @board[w_counter][h_counter].age == 2
-				print " O ".green if @board[w_counter][h_counter].age == 3
-				print " O ".blue if @board[w_counter][h_counter].age >= 4
-				print " - " if @board[w_counter][h_counter].age == 0
+				if @board[w_counter][h_counter].age == 0
+					print " - ".color(:black)
+				else
+					if @board[w_counter][h_counter].age <= 255
+
+						if board[w_counter][h_counter].age == 1
+							blue_color == 0
+						elsif @board[w_counter][h_counter].age < 5
+							blue_color = @board[w_counter][h_counter].age * 51
+						else
+							blue_color = 255
+						end
+
+						if board[w_counter][h_counter].age == 1
+							red_color == 255
+						elsif @board[w_counter][h_counter].age < 5
+							red_color = 255 - @board[w_counter][h_counter].age * 51
+						else
+							red_color = 0
+						end
+
+						print " O ".color(255, red_color, blue_color)
+					else
+						print " O ".color(255, 0, 255)
+					end
+				end
 				h_counter += 1
 			end
 		h_counter = 0

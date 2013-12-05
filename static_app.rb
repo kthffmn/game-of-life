@@ -83,7 +83,7 @@ if input2 == "y"
 		counter += 1
 		puts "Generation #{counter}."
 		puts "Enter [control][c] at any point to quit"
-		sleep 1
+		sleep 0.1
 	end
 ###################################################### Exits if user does not want to view any more generations
 else
