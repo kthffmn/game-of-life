@@ -4,6 +4,7 @@
 
 require './game.rb'
 require './cell.rb'
+require 'rainbow'
 
 #####################################################
 ############### H E R E    W E    G O : #############
@@ -74,16 +75,25 @@ print "Continue? (y/n): "
 input2 = gets.chomp
 ##################################################### Prints infinte loop of generations
 counter = 1
-if input2 == "y"
+if input2 == "y" || input2 == "Y"
 	while true
 		game.select_destiny
 		game.swap
 		puts "\e[H\e[2J"
 		game.prints_status
 		counter += 1
-		puts "Generation #{counter}."
-		puts "Enter [control][c] at any point to quit"
-		sleep 0.1
+		print "        Key".color(96, 96, 96)
+		puts "            Generation #{counter}.".color(96, 96, 96)
+		puts "color       age".color(96, 96, 96)
+		print "red          0".color(255, 0, 0)
+		puts "         Enter [control][c]".color(96, 96, 96)
+		print "orange       1".color(255, 128, 0)
+		puts "         at any point to quit".color(96, 96, 96)
+		puts "yellow       2".color(255, 255, 0)
+		puts "green        3".color(0, 255, 0)
+		puts "blue         4".color(0, 0, 255)
+		puts "purple       5+".color(127, 0, 255)
+		sleep 1.5
 	end
 ###################################################### Exits if user does not want to view any more generations
 else
