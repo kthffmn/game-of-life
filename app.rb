@@ -11,8 +11,8 @@ def get_imput
 end
 
 def num_alive(input)
-	num_of_total_cells = input ^ 2
-	rand(3...num_of_total_cells)
+	num_of_total_cells = input ** 2
+ 	rand(6...num_of_total_cells)
 end
 
 ##################################################### Get size of board
@@ -27,10 +27,16 @@ game.make_alive_cells(num)
 ##################################################### Prints board
 puts "1. Board made, alive cells randomly selected (first generation):"
 game.prints_status
-##################################################### Run 'destiny' on each cell
-game.select_destiny
-##################################################### Swaps 'destiny' with 'status'
-game.swap
-##################################################### Prints board
-puts "2. Second generation:"
-game.prints_status
+puts "Continue (y/n)"
+input2 = gets.chomp
+if input2 == "y"
+	while true
+		game.select_destiny
+		game.swap
+		puts "\e[H\e[2J"
+		game.prints_status
+		sleep 0.1
+	end
+else
+	puts "Okay cool I'll just go over here then *shuffles away awkwardly*"
+end

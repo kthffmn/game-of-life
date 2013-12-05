@@ -16,13 +16,11 @@ class Cell
 		@destiny = false
 	end
 
-	def nil?(row, column) #Sara's idea:
-		if game.board[row] == nil
-			nil
-		elsif game.board[row][column] == nil
-			nil
+	def nil?(column, row) #Sara's idea:
+		if row >= 0 && column >= 0 && row < game.height && column < game.width
+			game.board[column][row]
 		else
-			game.board[row][column]
+			nil
 		end
 	end
 
@@ -39,7 +37,12 @@ class Cell
 	end
 
 	def alive_neighbors
-		alive_neighbors = neighbor_array.select{|neighbor|neighbor.status==true}
+		g = neighbor_array.select{|neighbor|neighbor.status==true}
+		# print [x,y]
+		# print "\n"
+		# print g.map { |e| [e.x, e.y, e.status] }
+		# print "\n"
+		# g
 	end
 
 	def alive_count
@@ -51,6 +54,8 @@ class Cell
 			@destiny = false
 		elsif alive_count == 3
 			@destiny = true
+		else
+			@destiny = @status
 		end
 	end
 	
