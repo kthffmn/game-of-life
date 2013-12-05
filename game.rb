@@ -3,14 +3,15 @@
 ##########################
 
 require './cell.rb'
+require 'colorize'
 
 class Game
 	attr_reader :board, :width, :height
 
 
-	def initialize(input)
-		@width = input
-		@height = input
+	def initialize(width, height)
+		@width = width
+		@height = height
 		@board = Array.new(width) {Array.new(height)}
 	end
 
@@ -30,7 +31,9 @@ class Game
 
 	def make_alive_cells(num_alive)
 		num_alive.times do
-			@board[rand(0...width)][rand(0...height)].status = true
+			current_cell = @board[rand(0...width)][rand(0...height)]
+			current_cell.status = true
+			current_cell.age = 1
 		end
 	end
 
@@ -66,8 +69,11 @@ class Game
 		h_counter = 0
 		while w_counter < width do
 			while h_counter < height do
-				print " O " if @board[w_counter][h_counter].status == true
-				print " - " if @board[w_counter][h_counter].status == false
+				print " O ".red if @board[w_counter][h_counter].age == 1
+				print " O ".yellow if @board[w_counter][h_counter].age == 2
+				print " O ".green if @board[w_counter][h_counter].age == 3
+				print " O ".blue if @board[w_counter][h_counter].age >= 4
+				print " - " if @board[w_counter][h_counter].age == 0
 				h_counter += 1
 			end
 		h_counter = 0

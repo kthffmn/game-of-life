@@ -6,27 +6,32 @@ require './game.rb'
 require './cell.rb'
 
 # retrieves custom length/width from user, assuming it's going be a square
-def get_imput
-	print "Enter a number between 3 and 30 to choose length and width: "
-	input = gets.chomp
+def get_height
+	print "Enter a number between 3 and 30 to choose height: "
+	gets.chomp.to_i
 end
 
+def get_width
+	print "Enter a number between 3 and 30 to choose width: "
+	gets.chomp.to_i
+end
 # generates random number of alive cells between 7 and the total number of cells
-def num_alive(input)
-	num_of_total_cells = input ** 2
+def num_alive(width, height)
+	num_of_total_cells = width * height
  	rand(7...num_of_total_cells)
 end
 
 #####################################################
 ############### H E R E    W E    G O : #############
 ##################################################### Get size of board
-input = get_imput.to_i
+width = get_width
+height = get_height
 ##################################################### Make board
-game = Game.new(input)
+game = Game.new(height, width)
 ##################################################### Makes cells in every location on board
 game.make_cells
 ##################################################### Change some cell statuses to alive
-num_alive = num_alive(input)
+num_alive = num_alive(width, height)
 game.make_alive_cells(num_alive)
 ##################################################### Prints board
 puts "First generation:"
@@ -37,8 +42,6 @@ input2 = gets.chomp
 ##################################################### Prints infinte loop of generations
 counter = 1
 if input2 == "y"
-	puts "Enter [control][c] at any point to quit"
-	sleep 2
 	while true
 		game.select_destiny
 		game.swap
@@ -46,6 +49,7 @@ if input2 == "y"
 		game.prints_status
 		counter += 1
 		puts "Generation #{counter}."
+		puts "Enter [control][c] at any point to quit"
 		sleep 0.1
 	end
 ###################################################### Exits if user does not want to view any more generations

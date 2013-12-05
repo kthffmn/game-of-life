@@ -53,8 +53,6 @@ input2 = gets.chomp
 ##################################################### Prints infinte loop of generations
 counter = 1
 if input2 == "y"
-	puts "Enter [control][c] at any point to quit"
-	sleep 2
 	while true
 		game.select_destiny
 		game.swap
@@ -62,6 +60,7 @@ if input2 == "y"
 		game.prints_status
 		counter += 1
 		puts "Generation #{counter}."
+		puts "Enter [control][c] at any point to quit"
 		sleep 0.1
 	end
 ###################################################### Exits if user does not want to view any more generations
