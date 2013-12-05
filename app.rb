@@ -1,6 +1,6 @@
-#########################
-#######  A P P  #########
-#########################
+########################################
+#######  R A N D O M    A P P  #########
+########################################
 
 require './game.rb'
 require './cell.rb'
@@ -35,6 +35,7 @@ game.prints_status
 print "Continue? (y/n): "
 input2 = gets.chomp
 ##################################################### Prints infinte loop of generations
+counter = 1
 if input2 == "y"
 	puts "Enter [control][c] at any point to quit"
 	sleep 2
@@ -43,6 +44,8 @@ if input2 == "y"
 		game.swap
 		puts "\e[H\e[2J"
 		game.prints_status
+		counter += 1
+		puts "Generation #{counter}."
 		sleep 0.1
 	end
 ###################################################### Exits if user does not want to view any more generations
