@@ -1,13 +1,16 @@
-#########################
-#######  A P P  #########
-#########################
+########################################
+#######  S T A T I C    A P P  #########
+########################################
+
+require './game.rb'
+require './cell.rb'
 
 #####################################################
 ############### H E R E    W E    G O : #############
 #####################################################
 
-##################################################### Make 30 x 30 board
-game = Game.new(30)
+##################################################### Make 16 x 16 board
+game = Game.new(16)
 ##################################################### Makes cells in every location on board
 game.make_cells
 ##################################################### Make static alive shapes
@@ -18,12 +21,12 @@ game.board[1][2].status = true
 game.board[2][2].status = true
 
 # Beehive
-game.board[1][5].status = true
-game.board[2][4].status = true
-game.board[2][6].status = true
-game.board[3][4].status = true
-game.board[3][6].status = true
-game.board[4][5].status = true
+game.board[1][9 ].status = true
+game.board[2][8 ].status = true
+game.board[2][10].status = true
+game.board[3][8 ].status = true
+game.board[3][10].status = true
+game.board[4][9 ].status = true
 
 # Boat
 game.board[7][1].status = true
@@ -48,6 +51,7 @@ game.prints_status
 print "Continue? (y/n): "
 input2 = gets.chomp
 ##################################################### Prints infinte loop of generations
+counter = 1
 if input2 == "y"
 	puts "Enter [control][c] at any point to quit"
 	sleep 2
@@ -56,6 +60,8 @@ if input2 == "y"
 		game.swap
 		puts "\e[H\e[2J"
 		game.prints_status
+		counter += 1
+		puts "Generation #{counter}."
 		sleep 0.1
 	end
 ###################################################### Exits if user does not want to view any more generations
