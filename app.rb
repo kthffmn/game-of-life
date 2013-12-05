@@ -6,7 +6,7 @@ require './game.rb'
 require './cell.rb'
 
 def get_imput
-	puts "Enter a number between 3 and 10 to choose length and width: "
+	print "Enter a number between 3 and 10 to choose length and width: "
 	input = gets.chomp
 end
 
@@ -15,27 +15,22 @@ def num_alive(input)
 	rand(3...num_of_total_cells)
 end
 
-
-# get width and height of grid
+##################################################### Get size of board
 input = get_imput.to_i
-# make a new game using user input
+##################################################### Make board
 game = Game.new(input)
-# make cells in each location of grid
+##################################################### Makes cells in every location on board
 game.make_cells
-# change some cells to alive
+##################################################### Change some cell statuses to alive
 num = num_alive(input)
 game.make_alive_cells(num)
-# run destiny on each cell that's surrounded by at least one cell
+##################################################### Prints board
+puts "1. Board made, alive cells randomly selected (first generation):"
 game.prints_status
-puts game.array_count
-
-
-#game.select_destiny
-# prints statuses
-
-#game.prints_status
-
-
-
-
-
+##################################################### Run 'destiny' on each cell
+game.select_destiny
+##################################################### Swaps 'destiny' with 'status'
+game.swap
+##################################################### Prints board
+puts "2. Second generation:"
+game.prints_status

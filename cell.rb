@@ -6,13 +6,14 @@ require './game.rb'
 
 class Cell
 	attr_reader :x, :y, :game
-	attr_accessor :status
+	attr_accessor :status, :destiny
 
 	def initialize(x, y, game)
 		@x = x
 		@y = y
 		@game = game
 		@status = false
+		@destiny = false
 	end
 
 	def nil?(row, column) #Sara's idea:
@@ -45,11 +46,11 @@ class Cell
 		alive_num = alive_neighbors.count
 	end
 
-	def destiny
+	def set_destiny
 		if alive_count < 2 || alive_count > 3
-			@status = false
+			@destiny = false
 		elsif alive_count == 3
-			@status = true
+			@destiny = true
 		end
 	end
 	

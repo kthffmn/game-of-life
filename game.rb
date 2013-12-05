@@ -7,6 +7,7 @@ require './cell.rb'
 class Game
 	attr_reader :board, :width, :height
 
+
 	def initialize(input)
 		@width = input
 		@height = input
@@ -38,23 +39,35 @@ class Game
 		h_counter = 0
 		while w_counter < width do
 			while h_counter < width do
-				#if @board[w_counter][h_counter].alive_count != 0 || @board[w_counter][h_counter].status = true
-		 		@board[w_counter][h_counter].destiny
+		 		@board[w_counter][h_counter].set_destiny
 				h_counter += 1
-				#end
 			end
-		h_counter = 0
-		w_counter +=1
+			h_counter = 0
+			w_counter +=1
 		end
 	end
+
+	def swap
+		w_counter = 0
+		h_counter = 0
+		while w_counter < width do
+			while h_counter < width do
+		 		@board[w_counter][h_counter].status = @board[w_counter][h_counter].destiny
+				h_counter += 1
+			end
+			h_counter = 0
+			w_counter +=1
+		end
+	end
+
 
 	def prints_status
 		w_counter = 0
 		h_counter = 0
 		while w_counter < width do
 			while h_counter < width do
-				print 0 if @board[w_counter][h_counter].status == true
-				print " " if @board[w_counter][h_counter].status == false
+				print " O " if @board[w_counter][h_counter].status == true
+				print " - " if @board[w_counter][h_counter].status == false
 				h_counter += 1
 			end
 		h_counter = 0
