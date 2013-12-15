@@ -2,31 +2,35 @@ require 'bundler'
 Bundler.require
 
 Dir.glob('./lib/*.rb') do |model|
-  require model
+require model
 end
 
 module Name
-  class App < Sinatra::Application
-    @@game = Game.new
-    @@game.randomly_populate
+	class App < Sinatra::Application
+		@@game = Game.new(50, 50)
+		num_alive = rand(7...2025)
+		@@game.make_alive_cells(num_alive)
 
-    get '/' do
-      @@game.world.next_frame!
-      @local_game = @@game
-      @world = @local_game.world
-      @graph = @world.graph
-      @green = "background-color: green"
-      @black = "background-color: black"
-      
-      erb :index
-    end
+		get '/' do
+			erb :home
+		end
 
-    #helpers
-    # helpers do
-    #   def display_board
+		get '/randomize' do
+			@@game.select_destiny
+			@@game.swap
+			@my_board = @@game.board
+			@blue = "background-color: blue"
+			@black = "background-color: black"
+			erb :index
+		end
 
-    #   end
-    # end
-
-  end
+		get '/glider-gun' do
+			@@game.select_destiny
+			@@game.swap
+			@my_board = @@game.board
+			@blue = "background-color: blue"
+			@black = "background-color: black"
+			erb :index
+		end
+	end
 end

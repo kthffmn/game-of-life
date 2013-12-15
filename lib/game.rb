@@ -31,7 +31,7 @@ class Game
 
 	def make_alive_cells(num_alive)
 		num_alive.times do
-			current_cell = @board[rand(0...width)][rand(0...height)]
+			current_cell = @board[rand(0...50)][rand(0...50)]
 			current_cell.status = true
 			current_cell.age = 1
 		end
@@ -66,8 +66,6 @@ class Game
 	def prints_status
 		w_counter = 0
 		h_counter = 0
-		red_color = 255
-		blue_color = 0
 		while w_counter < width do
 			while h_counter < height do
 				if @board[w_counter][h_counter].age == 0
