@@ -1,0 +1,17 @@
+<div id="container">
+	<%w_counter = 0%>
+	<%h_counter = 0%>
+	<%while w_counter < 50 do%>
+		<%while h_counter < 50 do%>
+			<div class="cell" style="<%= @my_board[w_counter][h_counter].age == 0 ? @black : @blue %>"></div>
+			<%h_counter += 1 %>
+		<%end %>
+		<%h_counter = 0 %>
+		<%w_counter +=1 %>
+		<div class="break"><br></div>
+	<%end%>
+</div>
+
+<br></br>
+<p><a href="/">BACK</a></p>
+<p><a href="/glider-gun">GLIDER GUN</a></p>
