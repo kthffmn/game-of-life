@@ -9,10 +9,8 @@
 	<%while w_counter < 50 do%>
 		<li>
 		<%while h_counter < 50 do%>
-			<div>
-			<%= @my_board[w_counter][h_counter].age == 0 ? "-" : "O" %>
+			<div class="<%= @my_board[w_counter][h_counter].age == 0 ? "black" : "red" %>">.</div>
 			<%h_counter += 1 %>
-			</div>
 		<%end %>
 		<%h_counter = 0 %>	
 		<%w_counter +=1 %>

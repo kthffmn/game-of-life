@@ -9,23 +9,25 @@ body {
         margin: 0 auto;
 }*/
 
-div {
+
+ul div {
     display: inline;
+    width: 10px;
+    height: 10px;
+    margin-left: -10px;
 }
 
 li {
     list-style-type: none;
+    content: " ";
 }
 
 
 .black {
     background-color: black;
-    width: 10px;
-    height: 10px;
 }
 
 .red {
     background-color: red;
-    width: 10px;
-    height: 10px;
+    color: red;
 }
