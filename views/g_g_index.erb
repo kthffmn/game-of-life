@@ -9,7 +9,21 @@
 	<%while w_counter < 50 do%>
 		<li>
 		<%while h_counter < 50 do%>
-			<div class="<%= @my_board[w_counter][h_counter].age == 0 ? "black" : "red" %>">.</div>
+			<div class="<%= if @my_board[w_counter][h_counter].age == 0 
+								"black" 
+							elsif @my_board[w_counter][h_counter].age == 1 
+								"red" 
+							elsif @my_board[w_counter][h_counter].age == 2 
+								"orange" 
+							elsif @my_board[w_counter][h_counter].age == 3 
+								"yellow"
+							elsif @my_board[w_counter][h_counter].age == 4 
+								"green" 
+							elsif @my_board[w_counter][h_counter].age == 5 
+								"blue" 
+							else 
+								"purple"  
+							end %>">.</div>
 			<%h_counter += 1 %>
 		<%end %>
 		<%h_counter = 0 %>	
