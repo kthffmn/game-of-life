@@ -1,15 +1,31 @@
 body {
-        background-color: black;
+        font-family: "Courier New", Courier, monospace;
 }
 
-#container {
+/*#container {
         display: inline-block;
         width: 400;
         height: 400;
         margin: 0 auto;
+}*/
+
+div {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
 }
 
 
-.break {
-margin: 2px    
+.black {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+}
+
+.red {
+    background-color: red;
+    width: 10px;
+    height: 10px;
 }
