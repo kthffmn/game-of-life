@@ -2,8 +2,6 @@
 ######## C E L L ########
 #########################
 
-require './game.rb'
-
 class Cell
 	attr_reader :x, :y, :game
 	attr_accessor :status, :destiny, :age

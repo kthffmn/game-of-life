@@ -2,9 +2,6 @@
 #######  G A M E #########
 ##########################
 
-require './cell.rb'
-require 'rainbow'
-
 class Game
 	attr_reader :board, :width, :height
 

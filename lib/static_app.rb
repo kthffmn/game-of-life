@@ -2,9 +2,9 @@
 #######  S T A T I C    A P P  #########
 ########################################
 
-require './game.rb'
-require './cell.rb'
-require 'rainbow'
+# require './game.rb'
+# require './cell.rb'
+# require 'rainbow'
 
 #####################################################
 ############### H E R E    W E    G O : #############

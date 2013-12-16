@@ -2,17 +2,17 @@
 #######  R A N D O M    A P P  #########
 ########################################
 
-require './game.rb'
-require './cell.rb'
-require 'rainbow'
+# require './game.rb'
+# require './cell.rb'
+# require 'rainbow'
 # retrieves custom length/width from user, assuming it's going be a square
 def get_height
-	print "Enter a number between 3 and 30 to choose height: "
+	print "Enter a number between 50 and 100 to choose height: "
 	gets.chomp.to_i
 end
 
 def get_width
-	print "Enter a number between 3 and 30 to choose width: "
+	print "Enter a number between 50 and 100 to choose width: "
 	gets.chomp.to_i
 end
 # generates random number of alive cells between 7 and the total number of cells

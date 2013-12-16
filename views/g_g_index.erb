@@ -1,17 +1,18 @@
-<div id="container">
+<h1>Gosper's Glider Gun in The Game of Life</h1>
+<p><a href="/">HOME</a></p>
+<p><a href="/randomize">RANDOMIZED</a></p>
+<div id="content">
 	<%w_counter = 0%>
 	<%h_counter = 0%>
+	<ul><li>
 	<%while w_counter < 50 do%>
 		<%while h_counter < 50 do%>
-			<div class="cell" style="<%= @my_board[w_counter][h_counter].age == 0 ? @black : @blue %>"></div>
+			<%= @my_board[w_counter][h_counter].age == 0 ? "-" : "O" %>
 			<%h_counter += 1 %>
 		<%end %>
 		<%h_counter = 0 %>
 		<%w_counter +=1 %>
-		<div class="break"><br></div>
+	</li></ul>
+		<!-- <div class="break"><br></div> -->
 	<%end%>
 </div>
-
-<br></br>
-<p><a href="/">BACK</a></p>
-<p><a href="/randomize">RANDOMIZE</a></p>

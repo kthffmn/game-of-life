@@ -9,14 +9,6 @@ body {
         margin: 0 auto;
 }
 
-.cell {
-    background-color: blue;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    top: 20;
-    left: 20;
-}
 
 .break {
 margin: 2px    

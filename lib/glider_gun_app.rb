@@ -2,9 +2,9 @@
 #######  G L I D E R     A P P  #########
 #########################################
 
-require './game.rb'
-require './cell.rb'
-require 'rainbow'
+# require './game.rb'
+# require './cell.rb'
+# require 'rainbow'
 
 #####################################################
 ############### H E R E    W E    G O : #############
