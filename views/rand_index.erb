@@ -1,16 +1,29 @@
 <h1>Randomized Game of Life</h1>
-<p><a href="/">HOME</a></p>
-<p><a href="/glider-gun">GLIDER GUN</a></p>
-<div id="content">
+<p><a href="/">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/glider-gun">GLIDER GUN</a></p>
+
+<div class="next">
+	next <a href="/next">-></a>
+</div>
+
+<div id="content" style="display: inline-block">
 	<%w_counter = 0%>
 	<%h_counter = 0%>
-	<%while w_counter < 50 do%>
-		<%while h_counter < 50 do%>
-			<div class="cell" style="<%= @my_board[w_counter][h_counter].age == 0 ? @black : @blue %>"></div>
+	<ul>
+	<%while w_counter < 28 do%>
+		<li>
+		<%while h_counter < 40 do%>
+			<div class="<%= if @my_board[w_counter][h_counter].age == 0 
+								"black" 
+							else 
+								"red"  
+							end %>"
+			>.</div>
 			<%h_counter += 1 %>
 		<%end %>
-		<%h_counter = 0 %>
+		<%h_counter = 0 %>	
 		<%w_counter +=1 %>
-		<div class="break"><br></div>
+		</li>
 	<%end%>
+	</ul>
 </div>
+

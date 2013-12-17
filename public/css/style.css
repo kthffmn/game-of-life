@@ -1,27 +1,25 @@
 body {
         font-family: "Courier New", Courier, monospace;
+        background-color: black;
+        color: white;
 }
-
-/*#container {
-        display: inline-block;
-        width: 400;
-        height: 400;
-        margin: 0 auto;
-}*/
-
 
 ul div {
     display: inline;
     width: 10px;
-    height: 10px;
+    height: 5px;
     margin-left: -10px;
+    margin-bottom: -10px
 }
 
 li {
     list-style-type: none;
     content: " ";
+    color: black;
 }
-
+.next {
+    font-weight: bold;
+}
 
 .black {
     background-color: black;
@@ -42,7 +40,6 @@ li {
     color: yellow;
 }
 
-
 .green {
     background-color: green;
     color: green;
@@ -58,5 +55,21 @@ li {
     color: purple;
 }
 
-
-
+.key_red {
+    color: red;
+}
+.key_orange {
+    color: orange;
+}
+.key_yellow {
+    color: yellow;
+}
+.key_green {
+    color: green;
+}
+.key_blue {
+    color: blue;
+}
+.key_purple {
+    color: purple;
+}

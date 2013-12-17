@@ -28,7 +28,7 @@ class Game
 
 	def make_alive_cells(num_alive)
 		num_alive.times do
-			current_cell = @board[rand(0...50)][rand(0...50)]
+			current_cell = @board[rand(0...25)][rand(0...25)]
 			current_cell.status = true
 			current_cell.age = 1
 		end
