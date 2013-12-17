@@ -20,10 +20,26 @@ module Name
 			erb :next
 		end
 
+		get "/reset" do
+			w_counter = 0
+			h_counter = 0
+			while w_counter < width do
+				while h_counter < height do
+					@board[w_counter][h_counter].status = false
+					@board[w_counter][h_counter].age = 0
+					@board[w_counter][h_counter].destiny = false
+					h_counter += 1
+				end
+				h_counter = 0
+				w_counter +=1
+			end
+			erb :reset
+		end
+
 		get "/randomize" do
 			num_alive = rand(10...800)
 			num_alive.times do
-				current_cell = @@game.board[rand(0...25)][rand(0...25)]
+				current_cell = @@game.board[rand(0...28)][rand(0...40)]
 				current_cell.status = true
 				current_cell.age = 1
 			end
