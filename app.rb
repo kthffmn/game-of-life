@@ -21,13 +21,14 @@ module Name
 		end
 
 		get "/reset" do
+			@my_board = @@game.board
 			w_counter = 0
 			h_counter = 0
-			while w_counter < width do
-				while h_counter < height do
-					@board[w_counter][h_counter].status = false
-					@board[w_counter][h_counter].age = 0
-					@board[w_counter][h_counter].destiny = false
+			while w_counter < 28 do
+				while h_counter < 40 do
+					@my_board[w_counter][h_counter].status = false
+					@my_board[w_counter][h_counter].age = 0
+					@my_board[w_counter][h_counter].destiny = false
 					h_counter += 1
 				end
 				h_counter = 0
