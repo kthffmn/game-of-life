@@ -97,7 +97,7 @@ module Name
 			@@game.board[3][13].age = 1 # 6
 			@@game.board[9][13].age = 1 # 7
 			@@game.board[3][14].age = 1 # 8
-			@@game.board[9][14].age = 1 # 9
+			@@game.board[9][14].age = 1 # 
 			@@game.board[6][15].age = 1 # 10
 			@@game.board[4][16].age = 1 # 11
 			@@game.board[8][16].age = 1 # 12
@@ -135,6 +135,243 @@ module Name
 
 			@my_board = @@game.board
 			erb :g_g_index
+		end
+
+		get "/beehives" do
+			@@game.board[5][5 + 2].status = true
+			@@game.board[5][5 + 3].status = true
+			@@game.board[5][5 + 4].status = true
+			@@game.board[5][5 + 8].status = true
+			@@game.board[5][5 + 9].status = true
+			@@game.board[5][5 + 10].status = true
+
+			@@game.board[5 + 2][5	 ].status = true
+			@@game.board[5 + 2][5 + 5 ].status = true
+			@@game.board[5 + 2][5 + 7 ].status = true
+			@@game.board[5 + 2][5 + 12].status = true
+
+			@@game.board[5 + 3][5	 ].status = true
+			@@game.board[5 + 3][5 + 5 ].status = true
+			@@game.board[5 + 3][5 + 7 ].status = true
+			@@game.board[5 + 3][5 + 12].status = true   
+
+			@@game.board[5 + 4][5	 ].status = true
+			@@game.board[5 + 4][5 + 5 ].status = true
+			@@game.board[5 + 4][5 + 7 ].status = true
+			@@game.board[5 + 4][5 + 12].status = true
+
+			@@game.board[5 + 5][5 + 2 ].status = true
+			@@game.board[5 + 5][5 + 3 ].status = true
+			@@game.board[5 + 5][5 + 4 ].status = true
+			@@game.board[5 + 5][5 + 8 ].status = true
+			@@game.board[5 + 5][5 + 9 ].status = true
+			@@game.board[5 + 5][5 + 10].status = true
+
+			@@game.board[5 + 7][5 + 2 ].status = true
+			@@game.board[5 + 7][5 + 3 ].status = true
+			@@game.board[5 + 7][5 + 4 ].status = true
+			@@game.board[5 + 7][5 + 8 ].status = true
+			@@game.board[5 + 7][5 + 9 ].status = true
+			@@game.board[5 + 7][5 + 10].status = true
+
+			@@game.board[5 + 8][5	 ].status = true
+			@@game.board[5 + 8][5 + 5 ].status = true
+			@@game.board[5 + 8][5 + 7 ].status = true
+			@@game.board[5 + 8][5 + 12].status = true
+
+			@@game.board[5 + 9][5	 ].status = true
+			@@game.board[5 + 9][5 + 5 ].status = true
+			@@game.board[5 + 9][5 + 7 ].status = true
+			@@game.board[5 + 9][5 + 12].status = true   
+
+			@@game.board[5 + 10][5	  ].status = true
+			@@game.board[5 + 10][5 + 5 ].status = true
+			@@game.board[5 + 10][5 + 7 ].status = true
+			@@game.board[5 + 10][5 + 12].status = true
+
+			@@game.board[5 + 12][5 + 2 ].status = true
+			@@game.board[5 + 12][5 + 3 ].status = true
+			@@game.board[5 + 12][5 + 4 ].status = true
+			@@game.board[5 + 12][5 + 8 ].status = true
+			@@game.board[5 + 12][5 + 9 ].status = true
+			@@game.board[5 + 12][5 + 10].status = true 
+
+			@@game.board[5][5 + 2].age = 1
+			@@game.board[5][5 + 3].age = 1
+			@@game.board[5][5 + 4].age = 1
+			@@game.board[5][5 + 8].age = 1
+			@@game.board[5][5 + 9].age = 1
+			@@game.board[5][5 + 10].age = 1
+
+			@@game.board[5 + 2][5	 ].age = 1
+			@@game.board[5 + 2][5 + 5 ].age = 1
+			@@game.board[5 + 2][5 + 7 ].age = 1
+			@@game.board[5 + 2][5 + 12].age = 1
+
+			@@game.board[5 + 3][5	 ].age = 1
+			@@game.board[5 + 3][5 + 5 ].age = 1
+			@@game.board[5 + 3][5 + 7 ].age = 1
+			@@game.board[5 + 3][5 + 12].age = 1   
+
+			@@game.board[5 + 4][5	 ].age = 1
+			@@game.board[5 + 4][5 + 5 ].age = 1
+			@@game.board[5 + 4][5 + 7 ].age = 1
+			@@game.board[5 + 4][5 + 12].age = 1
+
+			@@game.board[5 + 5][5 + 2 ].age = 1
+			@@game.board[5 + 5][5 + 3 ].age = 1
+			@@game.board[5 + 5][5 + 4 ].age = 1
+			@@game.board[5 + 5][5 + 8 ].age = 1
+			@@game.board[5 + 5][5 + 9 ].age = 1
+			@@game.board[5 + 5][5 + 10].age = 1
+
+			@@game.board[5 + 7][5 + 2 ].age = 1
+			@@game.board[5 + 7][5 + 3 ].age = 1
+			@@game.board[5 + 7][5 + 4 ].age = 1
+			@@game.board[5 + 7][5 + 8 ].age = 1
+			@@game.board[5 + 7][5 + 9 ].age = 1
+			@@game.board[5 + 7][5 + 10].age = 1
+
+			@@game.board[5 + 8][5	 ].age = 1
+			@@game.board[5 + 8][5 + 5 ].age = 1
+			@@game.board[5 + 8][5 + 7 ].age = 1
+			@@game.board[5 + 8][5 + 12].age = 1
+
+			@@game.board[5 + 9][5	 ].age = 1
+			@@game.board[5 + 9][5 + 5 ].age = 1
+			@@game.board[5 + 9][5 + 7 ].age = 1
+			@@game.board[5 + 9][5 + 12].age = 1   
+
+			@@game.board[5 + 10][5	  ].age = 1
+			@@game.board[5 + 10][5 + 5 ].age = 1
+			@@game.board[5 + 10][5 + 7 ].age = 1
+			@@game.board[5 + 10][5 + 12].age = 1
+
+			@@game.board[5 + 12][5 + 2 ].age = 1
+			@@game.board[5 + 12][5 + 3 ].age = 1
+			@@game.board[5 + 12][5 + 4 ].age = 1
+			@@game.board[5 + 12][5 + 8 ].age = 1
+			@@game.board[5 + 12][5 + 9 ].age = 1
+			@@game.board[5 + 12][5 + 10].age = 1 
+
+			@@game.board[5][25 + 2].status = true
+			@@game.board[5][25 + 3].status = true
+			@@game.board[5][25 + 4].status = true
+			@@game.board[5][25 + 8].status = true
+			@@game.board[5][25 + 9].status = true
+			@@game.board[5][25 + 10].status = true
+
+			@@game.board[5 + 2][25	 ].status = true
+			@@game.board[5 + 2][25 + 5 ].status = true
+			@@game.board[5 + 2][25 + 7 ].status = true
+			@@game.board[5 + 2][25 + 12].status = true
+
+			@@game.board[5 + 3][25	 ].status = true
+			@@game.board[5 + 3][25 + 5 ].status = true
+			@@game.board[5 + 3][25 + 7 ].status = true
+			@@game.board[5 + 3][25 + 12].status = true   
+
+			@@game.board[5 + 4][25	 ].status = true
+			@@game.board[5 + 4][25 + 5 ].status = true
+			@@game.board[5 + 4][25 + 7 ].status = true
+			@@game.board[5 + 4][25 + 12].status = true
+
+			@@game.board[5 + 5][25 + 2 ].status = true
+			@@game.board[5 + 5][25 + 3 ].status = true
+			@@game.board[5 + 5][25 + 4 ].status = true
+			@@game.board[5 + 5][25 + 8 ].status = true
+			@@game.board[5 + 5][25 + 9 ].status = true
+			@@game.board[5 + 5][25 + 10].status = true
+
+			@@game.board[5 + 7][25 + 2 ].status = true
+			@@game.board[5 + 7][25 + 3 ].status = true
+			@@game.board[5 + 7][25 + 4 ].status = true
+			@@game.board[5 + 7][25 + 8 ].status = true
+			@@game.board[5 + 7][25 + 9 ].status = true
+			@@game.board[5 + 7][25 + 10].status = true
+
+			@@game.board[5 + 8][25	 ].status = true
+			@@game.board[5 + 8][25 + 5 ].status = true
+			@@game.board[5 + 8][25 + 7 ].status = true
+			@@game.board[5 + 8][25 + 12].status = true
+
+			@@game.board[5 + 9][25	 ].status = true
+			@@game.board[5 + 9][25 + 5 ].status = true
+			@@game.board[5 + 9][25 + 7 ].status = true
+			@@game.board[5 + 9][25 + 12].status = true   
+
+			@@game.board[5 + 10][25	  ].status = true
+			@@game.board[5 + 10][25 + 5 ].status = true
+			@@game.board[5 + 10][25 + 7 ].status = true
+			@@game.board[5 + 10][25 + 12].status = true
+
+			@@game.board[5 + 12][25 + 2 ].status = true
+			@@game.board[5 + 12][25 + 3 ].status = true
+			@@game.board[5 + 12][25 + 4 ].status = true
+			@@game.board[5 + 12][25 + 8 ].status = true
+			@@game.board[5 + 12][25 + 9 ].status = true
+			@@game.board[5 + 12][25 + 10].status = true 
+
+			@@game.board[5][25 + 2].age = 1
+			@@game.board[5][25 + 3].age = 1
+			@@game.board[5][25 + 4].age = 1
+			@@game.board[5][25 + 8].age = 1
+			@@game.board[5][25 + 9].age = 1
+			@@game.board[5][25 + 10].age = 1
+
+			@@game.board[5 + 2][25	 ].age = 1
+			@@game.board[5 + 2][25 + 5 ].age = 1
+			@@game.board[5 + 2][25 + 7 ].age = 1
+			@@game.board[5 + 2][25 + 12].age = 1
+
+			@@game.board[5 + 3][25	 ].age = 1
+			@@game.board[5 + 3][25 + 5 ].age = 1
+			@@game.board[5 + 3][25 + 7 ].age = 1
+			@@game.board[5 + 3][25 + 12].age = 1   
+
+			@@game.board[5 + 4][25	 ].age = 1
+			@@game.board[5 + 4][25 + 5 ].age = 1
+			@@game.board[5 + 4][25 + 7 ].age = 1
+			@@game.board[5 + 4][25 + 12].age = 1
+
+			@@game.board[5 + 5][25 + 2 ].age = 1
+			@@game.board[5 + 5][25 + 3 ].age = 1
+			@@game.board[5 + 5][25 + 4 ].age = 1
+			@@game.board[5 + 5][25 + 8 ].age = 1
+			@@game.board[5 + 5][25 + 9 ].age = 1
+			@@game.board[5 + 5][25 + 10].age = 1
+
+			@@game.board[5 + 7][25 + 2 ].age = 1
+			@@game.board[5 + 7][25 + 3 ].age = 1
+			@@game.board[5 + 7][25 + 4 ].age = 1
+			@@game.board[5 + 7][25 + 8 ].age = 1
+			@@game.board[5 + 7][25 + 9 ].age = 1
+			@@game.board[5 + 7][25 + 10].age = 1
+
+			@@game.board[5 + 8][25	 ].age = 1
+			@@game.board[5 + 8][25 + 5 ].age = 1
+			@@game.board[5 + 8][25 + 7 ].age = 1
+			@@game.board[5 + 8][25 + 12].age = 1
+
+			@@game.board[5 + 9][25	 ].age = 1
+			@@game.board[5 + 9][25 + 5 ].age = 1
+			@@game.board[5 + 9][25 + 7 ].age = 1
+			@@game.board[5 + 9][25 + 12].age = 1   
+
+			@@game.board[5 + 10][25	  ].age = 1
+			@@game.board[5 + 10][25 + 5 ].age = 1
+			@@game.board[5 + 10][25 + 7 ].age = 1
+			@@game.board[5 + 10][25 + 12].age = 1
+
+			@@game.board[5 + 12][25 + 2 ].age = 1
+			@@game.board[5 + 12][25 + 3 ].age = 1
+			@@game.board[5 + 12][25 + 4 ].age = 1
+			@@game.board[5 + 12][25 + 8 ].age = 1
+			@@game.board[5 + 12][25 + 9 ].age = 1
+			@@game.board[5 + 12][25 + 10].age = 1 
+
+			@my_board = @@game.board
+			erb :bee_index
 		end
 	end
 end
