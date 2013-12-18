@@ -18,7 +18,7 @@ ul div {
 li {
     list-style-type: none;
     content: " ";
-    color: black;
+    color: white;
 }
 
 A:link {text-decoration: none; color: black}
