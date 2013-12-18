@@ -1,7 +1,7 @@
 body {
         font-family: "Courier New", Courier, monospace;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
 }
 
 ul div {
@@ -21,16 +21,16 @@ li {
     color: black;
 }
 
-A:link {text-decoration: none; color: #D8D8D8}
-A:visited {text-decoration: none; color: #B0B0B0}
-A:active {text-decoration: none; color: #D8D8D8}
+A:link {text-decoration: none; color: black}
+A:visited {text-decoration: none; color: black}
+A:active {text-decoration: none; color: black}
 A:hover {text-decoration: underline overline; font-weight: bold}
 
 .next {
     font-weight: bold;
 }
 .black {
-    background-color: black;
+    background-color: white;
 }
 .red {
     background-color: red;
